@@ -138,6 +138,118 @@
       border-radius: 2px;
     }
 
+    /* Home Section */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .home-content {
+      z-index: 2;
+    }
+
+    .home-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      color: var(--primary);
+    }
+
+    .home-content h2 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .home-content p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      color: var(--text);
+      max-width: 500px;
+    }
+
+    .home-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .home-button {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      padding: 14px 35px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: 0.3s;
+      box-shadow: var(--shadow);
+    }
+
+    .home-button.secondary {
+      background: transparent;
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+    }
+
+    .home-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-button.secondary:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .home-image {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .home-image img {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+      transition: transform 0.5s ease;
+    }
+
+    .home-image img:hover {
+      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    }
+
+    .home-shape {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: var(--gradient);
+      opacity: 0.05;
+      top: -100px;
+      right: -100px;
+      z-index: 0;
+    }
+
     /* Hero Section */
     #hero {
       padding-top: 180px;
@@ -619,6 +731,23 @@
         justify-content: center;
       }
       
+      .home-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .home-content h1 {
+        font-size: 2.8rem;
+      }
+      
+      .home-content h2 {
+        font-size: 1.5rem;
+      }
+      
+      .home-buttons {
+        justify-content: center;
+      }
+      
       .about-content {
         grid-template-columns: 1fr;
       }
@@ -654,6 +783,7 @@
     <nav>
       <div class="logo">Mahesh<span>.</span></div>
       <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -663,17 +793,26 @@
     </nav>
   </header>
 
-  <section id="hero">
-    <div class="hero-content">
-      <h1>AWS & DevOps <span>Engineer</span></h1>
-      <p>Building scalable cloud infrastructure and automating deployment pipelines for efficient software delivery.</p>
-      <div class="cta-buttons">
-        <a href="#projects" class="cta-button">View My Work</a>
-        <a href="#contact" class="cta-button secondary">Get In Touch</a>
+  <!-- Home Section -->
+  <section id="home">
+    <div class="home-container">
+      <div class="home-content">
+        <h1>Mahesh Shelke</h1>
+        <h2>AWS & DevOps Engineer</h2>
+        <p>Building scalable cloud infrastructure and automating deployment pipelines for efficient software delivery.</p>
+        <div class="home-buttons">
+          <a href="#projects" class="home-button">View My Work</a>
+          <a href="#contact" class="home-button secondary">Get In Touch</a>
+        </div>
+      </div>
+      <div class="home-image">
+        <img src="/img/WhatsApp Image 2025-11-02 at 14.29.26_6b93f0e5.jpg" alt="Mahesh Shelke">
       </div>
     </div>
+    <div class="home-shape"></div>
   </section>
 
+  <!-- Rest of your existing sections -->
   <section id="about">
     <div class="section-title">
       <h2>About Me</h2>
