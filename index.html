@@ -15,14 +15,15 @@
 
   <style>
     :root {
-      --primary: #0a0e17;
-      --secondary: #ff6b6b;
-      --accent: #4ecdc4;
-      --dark: #1a1a2e;
-      --light: #f8f9fa;
-      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
-      --gradient-accent: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ffffff;
+      --dark: #2c3e50;
+      --gray: #f8f9fa;
+      --text: #5a6c7d;
+      --gradient: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     }
 
     * {
@@ -34,7 +35,7 @@
 
     body {
       background: var(--light);
-      color: #334155;
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -44,9 +45,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(10, 14, 23, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       z-index: 1000;
       transition: all 0.3s ease;
     }
@@ -57,19 +58,19 @@
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 15px 20px;
+      padding: 20px;
     }
 
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
-      color: white;
+      color: var(--primary);
       display: flex;
       align-items: center;
     }
 
     .logo span {
-      color: var(--accent);
+      color: var(--secondary);
       margin-left: 5px;
     }
 
@@ -81,7 +82,7 @@
 
     .nav-links a {
       text-decoration: none;
-      color: white;
+      color: var(--primary);
       font-weight: 500;
       transition: 0.3s;
       position: relative;
@@ -94,12 +95,12 @@
       height: 2px;
       bottom: -5px;
       left: 0;
-      background: var(--accent);
+      background: var(--secondary);
       transition: width 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--secondary);
     }
 
     .nav-links a:hover::after {
@@ -142,10 +143,7 @@
       padding-top: 180px;
       padding-bottom: 120px;
       text-align: center;
-      background: linear-gradient(135deg, rgba(10, 14, 23, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
       border-radius: 0 0 30px 30px;
       margin-bottom: 50px;
     }
@@ -154,19 +152,18 @@
       font-size: 3.5rem;
       margin-bottom: 20px;
       line-height: 1.2;
+      color: var(--primary);
     }
 
     .hero-content h1 span {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--secondary);
     }
 
     .hero-content p {
       font-size: 1.3rem;
       max-width: 700px;
       margin: 0 auto 40px;
-      color: #e2e8f0;
+      color: var(--text);
     }
 
     .cta-buttons {
@@ -185,22 +182,22 @@
       border-radius: 50px;
       font-weight: 500;
       transition: 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow);
     }
 
     .cta-button.secondary {
       background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
     }
 
     .cta-button:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .cta-button.secondary:hover {
-      background: var(--accent);
+      background: var(--secondary);
       color: white;
     }
 
@@ -208,7 +205,7 @@
     #about {
       background: white;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow);
       margin-top: -50px;
       position: relative;
       z-index: 2;
@@ -247,91 +244,17 @@
 
     .about-text p {
       margin-bottom: 20px;
-      color: #64748b;
+      color: var(--text);
       font-size: 1.05rem;
     }
 
-    /* Education */
-    #education {
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    /* Skills */
+    #skills {
+      background: var(--gray);
       border-radius: 20px;
       padding: 80px 40px;
     }
 
-    .education-timeline {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .education-timeline::before {
-      content: '';
-      position: absolute;
-      left: 30px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: var(--gradient);
-      border-radius: 2px;
-    }
-
-    .education-item {
-      display: flex;
-      margin-bottom: 40px;
-      position: relative;
-    }
-
-    .education-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--gradient);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      margin-right: 30px;
-      z-index: 2;
-      flex-shrink: 0;
-    }
-
-    .education-content {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      flex: 1;
-    }
-
-    .education-content h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-    }
-
-    .education-content .institute {
-      color: var(--secondary);
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .education-content .year {
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .education-content .grade {
-      background: var(--gradient-accent);
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      display: inline-block;
-      font-weight: 500;
-    }
-
-    /* Skills */
     .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -342,7 +265,7 @@
       background: white;
       border-radius: 15px;
       padding: 30px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow);
       transition: transform 0.3s ease;
     }
 
@@ -382,7 +305,7 @@
     }
 
     .skill-list li i {
-      color: var(--accent);
+      color: var(--secondary);
       font-size: 1.1rem;
     }
 
@@ -397,7 +320,7 @@
       background: white;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow);
       transition: 0.4s ease;
       position: relative;
     }
@@ -439,7 +362,7 @@
     }
 
     .project-content p {
-      color: #64748b;
+      color: var(--text);
       font-size: 0.95rem;
       margin-bottom: 20px;
     }
@@ -456,23 +379,95 @@
     }
 
     .project-link:hover {
-      background: var(--gradient-secondary);
+      background: var(--secondary);
+    }
+
+    /* Education */
+    #education {
+      background: white;
+      border-radius: 20px;
+      padding: 80px 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .education-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .education-timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    .education-item {
+      display: flex;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .education-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin-right: 30px;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .education-content {
+      background: var(--gray);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      flex: 1;
+    }
+
+    .education-content h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .education-content .institute {
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .education-content .year {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .education-content .grade {
+      background: var(--secondary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: 500;
     }
 
     /* Contact */
     #contact {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-      color: white;
+      background: var(--gray);
       border-radius: 20px;
       padding: 80px 40px;
-    }
-
-    #contact .section-title h2 {
-      color: white;
-    }
-
-    #contact .section-title h2::after {
-      background: var(--gradient-accent);
     }
 
     .contact-container {
@@ -494,37 +489,38 @@
       gap: 15px;
       font-size: 1.1rem;
       padding: 15px;
-      background: rgba(255, 255, 255, 0.1);
+      background: white;
       border-radius: 10px;
-      transition: background 0.3s ease;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
     }
 
     .contact-item:hover {
-      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
     }
 
     .contact-item i {
-      color: var(--accent);
+      color: var(--secondary);
       font-size: 1.5rem;
       width: 40px;
       text-align: center;
     }
 
     .contact-item a {
-      color: white;
+      color: var(--primary);
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .contact-item a:hover {
-      color: var(--accent);
+      color: var(--secondary);
     }
 
     .contact-form {
-      background: rgba(255, 255, 255, 0.05);
+      background: white;
       padding: 30px;
       border-radius: 15px;
-      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
     }
 
     .form-group {
@@ -534,7 +530,7 @@
     .form-group label {
       display: block;
       margin-bottom: 8px;
-      color: var(--accent);
+      color: var(--primary);
       font-weight: 500;
     }
 
@@ -542,18 +538,19 @@
     .form-group textarea {
       width: 100%;
       padding: 12px 15px;
-      border: none;
+      border: 1px solid #e1e5e9;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+      background: white;
+      color: var(--text);
       font-size: 1rem;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
     }
 
     .form-group textarea {
@@ -562,7 +559,7 @@
     }
 
     .submit-btn {
-      background: var(--gradient-accent);
+      background: var(--gradient);
       color: white;
       border: none;
       padding: 14px 30px;
@@ -575,17 +572,15 @@
     }
 
     .submit-btn:hover {
-      background: var(--gradient);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     footer {
       background: var(--primary);
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 40px 20px;
-      font-size: 0.9rem;
       margin-top: 50px;
     }
 
@@ -610,7 +605,7 @@
     }
 
     .social-links a:hover {
-      background: var(--accent);
+      background: var(--secondary);
       transform: translateY(-5px);
     }
 
@@ -660,9 +655,9 @@
       <div class="logo">Mahesh<span>.</span></div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -692,35 +687,6 @@
         <p>I am a passionate AWS & DevOps Engineer with expertise in designing, implementing, and managing cloud infrastructure and CI/CD pipelines. I specialize in automating deployment processes to ensure efficient and reliable software delivery.</p>
         <p>With a strong foundation in cloud technologies and DevOps practices, I help organizations optimize their infrastructure for scalability, security, and cost-effectiveness.</p>
         <p>My goal is to bridge the gap between development and operations, enabling teams to deliver high-quality software faster and more reliably.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="section-title">
-      <h2>Education</h2>
-    </div>
-    <div class="education-timeline">
-      <div class="education-item">
-        <div class="education-icon">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <div class="education-content">
-          <h3>Bachelor of Computer Applications (BCA)</h3>
-          <div class="institute">Solapur University</div>
-          <div class="year">2021 - 2024</div>
-          <div class="grade">8.7 CGPA</div>
-        </div>
-      </div>
-      <div class="education-item">
-        <div class="education-icon">
-          <i class="fas fa-school"></i>
-        </div>
-        <div class="education-content">
-          <h3>12th Grade (HSC)</h3>
-          <div class="institute">Shelgon College</div>
-          <div class="year">2019 - 2021</div>
-        </div>
       </div>
     </div>
   </section>
@@ -778,6 +744,35 @@
       <p>All projects load automatically from JSON file 🚀</p>
     </div>
     <div id="projects-container" class="projects-grid"></div>
+  </section>
+
+  <section id="education">
+    <div class="section-title">
+      <h2>Education</h2>
+    </div>
+    <div class="education-timeline">
+      <div class="education-item">
+        <div class="education-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="education-content">
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <div class="institute">Solapur University</div>
+          <div class="year">2021 - 2024</div>
+          <div class="grade">8.7 CGPA</div>
+        </div>
+      </div>
+      <div class="education-item">
+        <div class="education-icon">
+          <i class="fas fa-school"></i>
+        </div>
+        <div class="education-content">
+          <h3>12th Grade (HSC)</h3>
+          <div class="institute">Shelgon College</div>
+          <div class="year">2019 - 2021</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
