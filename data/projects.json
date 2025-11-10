@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Amazon Price Tracker",
+    "description": "Tracks product prices using AWS Lambda and SNS alerts.",
+    "image": "img/amprice.png",
+    "link": "https://github.com/Maheshshelke05/Amazon-Price-Tracker-using-AWS-Services"
+  },
+  {
+    "name": "Movie Ticket Booking System",
+    "description": "AWS 3-tier architecture web app with scalable backend.",
+    "image": "img/movie.png",
+    "link": "https://github.com/Maheshshelke05/MAHE0505--Movie-Ticket-Booking-System-AWS-3-Tier-Architecture-"
+  },
+  {
+    "name": "YouTube Auto Uploader",
+    "description": "Automates video uploads to YouTube with metadata.",
+    "image": "img/you.png",
+    "link": "https://github.com/Maheshshelke05/-YouTube-Auto-Uploader---Complete-Automated-System"
+  }
+]
